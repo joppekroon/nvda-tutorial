@@ -60,6 +60,7 @@ class Answers {
         title: solution.title,
         explanation: solution.explanation,
         correct: answer === solution.solution,
+        answer
       };
     })
   }
@@ -78,7 +79,7 @@ self.addEventListener('fetch', (event) => {
   });
 
   if (url.pathname.endsWith('question6.html')) {
-    event.respondWith(fetch('final.html'));
+    event.respondWith(fetch('results.html'));
   }
 });
 
