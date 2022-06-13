@@ -60,6 +60,7 @@ class Answers {
         title: solution.title,
         explanation: solution.explanation,
         correct: answer === solution.solution,
+        answer
       };
     })
   }
