@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results - Screen Reader Quiz</title>
+
+  <link rel="stylesheet" href="style/base.css">
+  <style>
+    section+section {
+      margin-top: 4rem;
+    }
+
+    .result-icon.check {
+      color: #007936;
+    }
+
+    .result-icon.fail {
+      color: #d30038;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .result-icon.check {
+        color: #00d061;
+      }
+
+      .result-icon.fail {
+        color: #ff97a0;
+      }
+    }
+  </style>
+
+  <link rel="icon" href="favicon.svg">
+</head>
+
+<body>
+  <h1>Your Screen Reader Quiz Results</h1>
+
+  <script>
+    const resultsArea = document.querySelector('#results');
+
+    (async () => {
+      const registration = await navigator.serviceWorker.ready;
+
+      registration.active.postMessage('results');
+
+      navigator.serviceWorker.addEventListener('message', event => {
+        const results = event.data.results;
+        if (results && Array.isArray(results)) {
+          const scoreLine = document.createElement('p');
+          scoreLine.innerHTML = `Score: ${results.filter(answer => answer.correct).length} of ${results.length}`;
+
+          document.body.append(scoreLine);
+
+          results
+            .map((answer, index) => `
+              <h2 id="section-${index}">${answer.title}</h2>
+              <p>
+                <span class="result-icon ${answer.correct ? 'check' : 'fail'}" aria-hidden="true">
+                  ${answer.correct ? '✓' : '✕'}
+                </span>
+                ${answer.correct ? 'Correct' : 'Incorrect'}
+              </p>
+              <details>
+                <summary>Show solution</summary>
+                ${answer.explanation}
+              </details>
+            `)
+            .map((content, index) => {
+              const section = document.createElement('section');
+              section.setAttribute('aria-labelledby', `section-${index}`);
+              section.innerHTML = content;
+
+              return section;
+            })
+            .forEach(section => {
+              document.body.append(section);
+            });
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>

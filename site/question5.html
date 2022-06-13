@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 5 - Screen Reader Quiz</title>
+
+  <link rel="stylesheet" href="style/base.css">
+  <link rel="stylesheet" href="style/button.css">
+  <link rel="stylesheet" href="style/question.css">
+
+  <link rel="icon" href="favicon.svg">
+
+  <style>
+    button {
+      all: unset;
+      text-decoration: underline;
+    }
+
+    a,
+    button {
+      outline: none;
+    }
+
+    a,
+    u,
+    button {
+      color: var(--accent);
+      cursor: pointer;
+    }
+
+
+    h2 a {
+      text-decoration: none;
+      cursor: text;
+      color: currentColor;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Follow the fifth link!</h1>
+
+  <form action="question6.html" method="get">
+    <section class="question-setup" aria-labelledby="question-setup-title">
+      <h2 id="question-setup-title">Some text <a href="question6.html?Q5=withlinks">with links</a></h2>
+      Cat ipsum dolor sit amet, chase little red dot someday it will be mine! run outside as soon as door open so the
+      fat
+      cat sat on the mat bat away with paws take a deep sniff of sock then walk around with mouth half open.
+      <u>Human</u>
+      give me
+      attention <a href="question6.html?Q5=meow">meow</a> pee on walls it smells like breakfast. Carefully drink from
+      water
+      glass and then spill it everywhere
+      and proceed to lick the puddle i is not fat, i is <a href="question6.html?Q5=fluffy">fluffy</a> under the bed, so
+      i
+      like
+      to spend my days sleeping and
+      eating <button type="submit" formaction="question6.html?Q5=fishes">fishes</button> that my human fished for me we
+      live on a luxurious yacht, sailing proudly under the sun, i like to
+      walk on the deck, watching the horizon, dreaming of a good bowl of milk, for climb a tree, wait for a fireman jump
+      to fireman then <a href="question6.html?Q5=scratch">scratch</a> his face, or sleep in the bathroom sink.
+      Mesmerizing
+      birds murr i hate humans they are so
+      annoying eat owner's food, yet stare at wall turn and meow stare at wall some <u>more meow</u> again continue
+      staring so
+      trip on catnip so prance along on top of the garden fence, annoy the neighbor's <a
+        href="question6.html?Q5=dog">dog</a>
+      and make it bark. Cat milk copy
+      park pee walk owner escape bored tired cage droppings sick vet vomit catty ipsum eat half my food and ask for
+      more.
+      I'm so hungry but ew not for that <a href="question6.html?Q5=kitty">kitty</a> time. Poop on couch
+      adventure always eat prawns daintily
+      with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on
+      the couch to claw at the fabric before taking a catnap.
+    </section>
+
+    <button type="submit">I give up</button>
+  </form>
+
+</body>
+
+</html>

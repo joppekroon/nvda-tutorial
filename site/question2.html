@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 2 - Screen Reader Quiz</title>
+
+  <link rel="stylesheet" href="style/base.css">
+  <link rel="stylesheet" href="style/button.css">
+  <link rel="stylesheet" href="style/question.css">
+
+  <link rel="icon" href="favicon.svg">
+  <style>
+    .visually-hidden {
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(50%);
+      height: 1px;
+      width: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="question-setup" aria-labelledby="question-setup-title">
+    <h2 id="question-setup-title">List of random things</h2>
+    <ul>
+      <li>Pencil</li>
+      <li>Blouse</li>
+      <li>Bowtie</li>
+      <li>Chair</li>
+      <li class="visually-hidden">Wagon</li>
+    </ul>
+  </section>
+
+  <form action="question3.html" method="get">
+    <fieldset class="radio-group">
+      <legend>
+        <h1>What is the last list item?</h1>
+      </legend>
+
+      <div class="answers">
+        <label class="radio">
+          <input type="radio" name="Q2" value="pencil" class="radio-input">
+          Pencil
+        </label>
+        <label class="radio">
+          <input type="radio" name="Q2" value="blouse" class="radio-input">
+          Blouse
+        </label>
+        <label class="radio">
+          <input type="radio" name="Q2" value="bowtie" class="radio-input">
+          Bowtie
+        </label>
+        <label class="radio">
+          <input type="radio" name="Q2" value="chair" class="radio-input">
+          Chair
+        </label>
+        <label class="radio visually-hidden">
+          <input type="radio" name="Q2" value="wagon" class="radio-input">
+          Wagon
+        </label>
+      </div>
+    </fieldset>
+
+    <button type="submit">Next Question</button>
+  </form>
+</body>
+
+</html>
