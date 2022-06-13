@@ -79,7 +79,7 @@ self.addEventListener('fetch', (event) => {
   });
 
   if (url.pathname.endsWith('question6.html')) {
-    event.respondWith(fetch('final.html'));
+    event.respondWith(fetch('results.html'));
   }
 });
 
