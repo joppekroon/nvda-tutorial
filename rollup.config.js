@@ -21,7 +21,6 @@ export default {
 	},
 	plugins: [
 		html({
-
 			minify: !devMode
 		}),
 		terser({
@@ -34,7 +33,7 @@ export default {
 		}),
 		copy({
 			rootDir: './site',
-			patterns: [ 'service-worker.js' ]
+			patterns: [ 'fonts/**' ]
 		})
 	]
 };
