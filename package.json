@@ -1,24 +1,26 @@
 {
-  "name": "screen-reader-quiz",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "start": "live-server --watch=docs --open=docs",
-    "dev": "rollup -c -w --environment NODE_ENV:development",
-    "build": "rollup -c"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "live-server": "^1.2.2",
-    "rimraf": "^3.0.2"
-  },
-  "dependencies": {
-    "@web/rollup-plugin-copy": "^0.3.0",
-    "@web/rollup-plugin-html": "^1.10.3",
-    "rollup-plugin-terser": "^7.0.2"
-  }
+	"name": "screen-reader-quiz",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"start": "live-server --watch=docs --open=docs",
+		"dev": "rollup -c -w --environment NODE_ENV:development",
+		"build": "rollup -c"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"eslint": "^8.18.0",
+		"eslint-plugin-html": "^6.2.0",
+		"live-server": "^1.2.2",
+		"rimraf": "^3.0.2"
+	},
+	"dependencies": {
+		"@web/rollup-plugin-copy": "^0.3.0",
+		"@web/rollup-plugin-html": "^1.10.3",
+		"rollup-plugin-terser": "^7.0.2"
+	}
 }

@@ -2,75 +2,48 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Screen Reader Quiz</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Screen Reader Quiz</title>
 
-  <link rel="stylesheet" href="style/base.css">
-  <link rel="stylesheet" href="style/button.css">
+	<link rel="stylesheet" href="style/base.css">
+	<link rel="stylesheet" href="style/button.css">
 
-  <link rel="icon" href="favicon.svg">
+	<link rel="icon" href="favicon.svg">
 </head>
 
 <body>
-  <h1>Screen Reader Quiz</h1>
+	<h1>Screen Reader Quiz</h1>
+	<noscript>
+		JS must be enabled to keep track of the answers.
+	</noscript>
 
-  <form id="start" action="question1.html" method="get">
-    <div aria-live="assertive" id="button-area">
-      <noscript>
-        Unfortunately, since there is no real server, JS must be enabled for this.
-      </noscript>
-    </div>
-  </form>
+	<p>
+		Start up NVDA, and click the button.
+	</p>
 
-  <script>
-    const startForm = document.querySelector('#start');
-    const buttonArea = document.querySelector('#button-area');
+	<form id="start" action="question1.html" method="get">
+		<button id="go" type="submit">Let's get started!</button>
+		<button id="reset" type="reset">Clear old answers</button>
+	</form>
 
-    const busyMessageTimeout = setTimeout(() => {
-      buttonArea.textContent = 'Preparing the fake server...';
-    }, 200);
+	<div aria-live="polite" id="messages"></div>
 
+	<script>
+		const startForm = document.querySelector('#start');
+		startForm.addEventListener('reset', () => {
+			localStorage.clear();
 
-    if (!('serviceWorker' in navigator)) {
-      buttonArea.textContent = `Can't fake a server in this browser, try another?`;
-      clearTimeout(busyMessageTimeout);
-    } else {
-      (async () => {
-        try {
-          navigator.serviceWorker.register('service-worker.js');
-
-          const registration = await navigator.serviceWorker.ready;
-          startForm.addEventListener('reset', () => registration.active.postMessage('reset'));
-
-          const goButton = `<button type="submit">Let's get started!</button>`;
-          const resetButton = `<button type="reset">Clear old answers</button>`;
-
-          navigator.serviceWorker.addEventListener('message', event => {
-            if (event.data.error) {
-              throw (new Error(event.data.error));
-            }
-
-            if (event.data.answers) {
-              buttonArea.innerHTML = goButton + resetButton;
-            }
-            else {
-              buttonArea.innerHTML = goButton;
-            }
-
-            clearTimeout(busyMessageTimeout);
-          });
-
-          registration.active.postMessage('answers');
-        }
-        catch (error) {
-          buttonArea.textContent = `Error while preparing the fake server. Refresh maybe?`;
-          console.log(error);
-        }
-      })();
-    }
-  </script>
+			const messages = document.querySelector('#messages');
+			if (messages.innerHTML.length === 0 || messages.innerHTML === 'Answers cleared again') {
+				messages.innerHTML = 'Answers cleared';
+			}
+			else {
+				messages.innerHTML = 'Answers cleared again';
+			}
+		});
+	</script>
 </body>
 
 </html>

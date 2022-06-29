@@ -2,86 +2,191 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Results - Screen Reader Quiz</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Results - Screen Reader Quiz</title>
 
-  <link rel="stylesheet" href="style/base.css">
-  <style>
-    section+section {
-      margin-top: 4rem;
-    }
+	<link rel="stylesheet" href="style/base.css">
+	<style>
+		h2 {
+			margin-top: 4rem;
+		}
 
-    .result-icon.check {
-      color: #007936;
-    }
+		a {
+			color: currentColor;
+		}
 
-    .result-icon.fail {
-      color: #d30038;
-    }
+		.hidden {
+			display: none;
+		}
 
-    @media (prefers-color-scheme: dark) {
-      .result-icon.check {
-        color: #00d061;
-      }
+		.correct .result-icon {
+			color: #007936;
+		}
 
-      .result-icon.fail {
-        color: #ff97a0;
-      }
-    }
-  </style>
+		.failed .result-icon {
+			color: #d30038;
+		}
 
-  <link rel="icon" href="favicon.svg">
+		@media (prefers-color-scheme: dark) {
+			.correct .result-icon {
+				color: #00d061;
+			}
+
+			.failed .result-icon {
+				color: #ff97a0;
+			}
+		}
+	</style>
+
+	<link rel="icon" href="favicon.svg">
 </head>
 
 <body>
-  <h1>Your Screen Reader Quiz Results</h1>
+	<h1>Your Screen Reader Quiz Results</h1>
+	<p>
+		Score: <span id="score"></span> out of 5. <a href="index.html">Go again!</a>
+	</p>
 
-  <script>
-    const resultsArea = document.querySelector('#results');
+	<h2>
+		<a href="question1.html">
+			Question 1: Which is the third list item?
+		</a>
+	</h2>
+	<p>
+		<span id="q1-correct" class="correct hidden">
+			<span class="result-icon" aria-hidden="true">✓</span> Correct
+		</span>
+		<span id="q1-failed" class="failed hidden">
+			<span class="result-icon" aria-hidden="true">✕</span> Incorrect
+		</span>
+		:
+		<span id="q1-answer"></span>
+	</p>
+	<details>
+		<summary>Show solution</summary>
+		<p>
+			The order of the items has been changed in CSS, but the screen reader only looks at the order in the HTML.
+		</p>
+	</details>
 
-    (async () => {
-      const registration = await navigator.serviceWorker.ready;
+	<h2>
+		<a href="question2.html">
+			Question 2: What is the last list item?
+		</a>
+	</h2>
+	<p>
+		<span id="q2-correct" class="correct hidden">
+			<span class="result-icon" aria-hidden="true">✓</span> Correct
+		</span>
+		<span id="q2-failed" class="failed hidden">
+			<span class="result-icon" aria-hidden="true">✕</span> Incorrect
+		</span>
+		:
+		<span id="q2-answer"></span>
+	</p>
+	<details>
+		<summary>Show solution</summary>
+		<p>
+			The last list item and radio button have been visually hidden, but they are visible to the screen reader.
+		</p>
+	</details>
 
-      registration.active.postMessage('results');
+	<h2>
+		<a href="question3.html">
+			Question 3: What is a string instrument?
+		</a>
+	</h2>
+	<p>
+		<span id="q3-correct" class="correct hidden">
+			<span class="result-icon" aria-hidden="true">✓</span> Correct
+		</span>
+		<span id="q3-failed" class="failed hidden">
+			<span class="result-icon" aria-hidden="true">✕</span> Incorrect
+		</span>
+		:
+		<span id="q3-answer"></span>
+	</p>
+	<details>
+		<summary>Show solution</summary>
+		<p>
+			The labels of the radio buttons have been replaced with definitions of types of instruments using
+			<code>aria-label</code> and <code>aria-hidden</code>. The list of items is just a decoy.
+		</p>
+	</details>
 
-      navigator.serviceWorker.addEventListener('message', event => {
-        const results = event.data.results;
-        if (results && Array.isArray(results)) {
-          const scoreLine = document.createElement('p');
-          scoreLine.innerHTML = `Score: ${results.filter(answer => answer.correct).length} of ${results.length}`;
+	<h2>
+		<a href="question4.html">
+			Question 4: Which image is the red brick?
+		</a>
+	</h2>
+	<p>
+		<span id="q4-correct" class="correct hidden">
+			<span class="result-icon" aria-hidden="true">✓</span> Correct
+		</span>
+		<span id="q4-failed" class="failed hidden">
+			<span class="result-icon" aria-hidden="true">✕</span> Incorrect
+		</span>
+		:
+		<span id="q4-answer"></span>
+	</p>
+	<details>
+		<summary>Show solution</summary>
+		<p>
+			The alt texts do not match the pictures, one image is even made invisible due to an empty alt attribute.
+		</p>
+	</details>
 
-          document.body.append(scoreLine);
+	<h2>
+		<a href="question5.html">
+			Question 5: Which is the fifth link?
+		</a>
+	</h2>
+	<p>
+		<span id="q5-correct" class="correct hidden">
+			<span class="result-icon" aria-hidden="true">✓</span> Correct
+		</span>
+		<span id="q5-failed" class="failed hidden">
+			<span class="result-icon" aria-hidden="true">✕</span> Incorrect
+		</span>
+		:
+		<span id="q5-answer"></span>
+	</p>
+	<details>
+		<summary>Show solution</summary>
+		<p>
+			One link has it's underline removed, and some underlined words are not links at all.
+		</p>
+	</details>
 
-          results
-            .map((answer, index) => `
-              <h2 id="section-${index}">${answer.title}</h2>
-              <p>
-                <span class="result-icon ${answer.correct ? 'check' : 'fail'}" aria-hidden="true">
-                  ${answer.correct ? '✓' : '✕'}
-                </span>
-                ${answer.correct ? 'Correct' : 'Incorrect'} "${answer.answer}"
-              </p>
-              <details>
-                <summary>Show solution</summary>
-                ${answer.explanation}
-              </details>
-            `)
-            .map((content, index) => {
-              const section = document.createElement('section');
-              section.setAttribute('aria-labelledby', `section-${index}`);
-              section.innerHTML = content;
+	<script>
+		function processAnswer(key, correctAnswer) {
+			const answer = localStorage.getItem(key);
+			document.querySelector(`#${key}-answer`).textContent = answer || 'unanswered';
 
-              return section;
-            })
-            .forEach(section => {
-              document.body.append(section);
-            });
-        }
-      });
-    })();
-  </script>
+			if (answer == correctAnswer) {
+				document.querySelector(`#${key}-correct`).classList.remove('hidden');
+
+				return true;
+			}
+			else {
+				document.querySelector(`#${key}-failed`).classList.remove('hidden');
+
+				return false;
+			}
+		}
+
+		let correctAnswers = 0;
+
+		correctAnswers += processAnswer('q1', 'D');
+		correctAnswers += processAnswer('q2', 'B');
+		correctAnswers += processAnswer('q3', 'A');
+		correctAnswers += processAnswer('q4', 'D');
+		correctAnswers += processAnswer('q5', 'A');
+
+		document.querySelector('#score').textContent = correctAnswers;
+	</script>
 </body>
 
 </html>

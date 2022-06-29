@@ -1,24 +1,24 @@
 * {
-  line-height: 1.5;
+	line-height: 1.5;
 }
 
 html {
-  --bg: ghostwhite;
-  --fg: #1b1b1b;
-  --accent: royalblue;
-  --on-accent: white;
+	--bg: ghostwhite;
+	--fg: #1b1b1b;
+	--accent: royalblue;
+	--on-accent: white;
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    --bg: #1b1b1b;
-    --fg: ghostwhite;
-  }
+	html {
+		--bg: #1b1b1b;
+		--fg: ghostwhite;
+	}
 }
 
 html {
-  background-color: var(--bg);
-  color: var(--fg);
+	background-color: var(--bg);
+	color: var(--fg);
 
-  padding: 16px;
+	padding: 16px;
 }

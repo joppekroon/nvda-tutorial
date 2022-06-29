@@ -2,61 +2,63 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Question 3 - Screen Reader Quiz</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Question 3 - Screen Reader Quiz</title>
 
-  <link rel="stylesheet" href="style/base.css">
-  <link rel="stylesheet" href="style/button.css">
-  <link rel="stylesheet" href="style/question.css">
+	<script src="script/question.js" defer></script>
 
-  <link rel="icon" href="favicon.svg">
+	<link rel="stylesheet" href="style/base.css">
+	<link rel="stylesheet" href="style/button.css">
+	<link rel="stylesheet" href="style/question.css">
+
+	<link rel="icon" href="favicon.svg">
 </head>
 
 <body>
-  <section class="question-setup" aria-labelledby="question-setup-title">
-    <h2 id="question-setup-title">List of random things</h2>
-    <ul>
-      <li>Slide Whistle</li>
-      <li>Snare Drum</li>
-      <li>Violin</li>
-      <li>Trombone</li>
-    </ul>
-  </section>
+	<section class="question-setup" aria-labelledby="question-setup-title">
+		<h2 id="question-setup-title">List of random things</h2>
+		<ul>
+			<li>Slide Whistle</li>
+			<li>Snare Drum</li>
+			<li>Violin</li>
+			<li>Trombone</li>
+		</ul>
+	</section>
 
-  <form action="question4.html" method="get">
-    <fieldset class="radio-group">
-      <legend>
-        <h1>What is a string instrument?</h1>
-      </legend>
+	<form action="question4.html" method="get">
+		<fieldset class="radio-group">
+			<legend>
+				<h1>What is a string instrument?</h1>
+			</legend>
 
-      <div class="answers">
-        <label class="radio">
-          <input type="radio" class="radio-input" value="percussion" name="Q3"
-            aria-label="a musical instrument that is sounded by being struck or scraped by a beater.">
-          <span aria-hidden="true">Slide Whistle</span>
-        </label>
-        <label class="radio">
-          <input type="radio" class="radio-input" value="string" name="Q3"
-            aria-label="a musical instrument that produces sound from vibrating strings when a performer plays or sounds the strings in some manner.">
-          <span aria-hidden="true">Snare Drum</span>
-        </label>
-        <label class="radio">
-          <input type="radio" class="radio-input" value="wind" name="Q3"
-            aria-label="a musical instrument that contains some type of resonator (usually a tube) in which a column of air is set into vibration.">
-          <span aria-hidden="true">Violin</span>
-        </label>
-        <label class="radio">
-          <input type="radio" class="radio-input" value="electronic" name="Q3"
-            aria-label="a musical instrument that produces sound using electronic circuitry.">
-          <span aria-hidden="true">Trombone</span>
-        </label>
-      </div>
-    </fieldset>
+			<div class="answers">
+				<label class="radio">
+					<input type="radio" class="radio-input" value="A" name="q3"
+						aria-label="a musical instrument that is sounded by being struck or scraped by a beater.">
+					<span aria-hidden="true">Slide Whistle</span>
+				</label>
+				<label class="radio">
+					<input type="radio" class="radio-input" value="base" name="q3"
+						aria-label="a musical instrument that produces sound from vibrating strings when a performer plays or sounds the strings in some manner.">
+					<span aria-hidden="true">Snare Drum</span>
+				</label>
+				<label class="radio">
+					<input type="radio" class="radio-input" value="C" name="q3"
+						aria-label="a musical instrument that contains some type of resonator (usually a tube) in which a column of air is set into vibration.">
+					<span aria-hidden="true">Violin</span>
+				</label>
+				<label class="radio">
+					<input type="radio" class="radio-input" value="D" name="q3"
+						aria-label="a musical instrument that produces sound using electronic circuitry.">
+					<span aria-hidden="true">Trombone</span>
+				</label>
+			</div>
+		</fieldset>
 
-    <button type="submit">Next Question</button>
-  </form>
+		<button type="submit">Next Question</button>
+	</form>
 </body>
 
 </html>
