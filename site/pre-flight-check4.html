@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reading - Screen Reader Quiz</title>
+
+	<link rel="stylesheet" href="style/base.css">
+	<link rel="stylesheet" href="style/button.css">
+	<link rel="stylesheet" href="style/question.css">
+
+	<link rel="icon" href="favicon.svg">
+</head>
+
+<body>
+	<h1>Reading</h1>
+
+	<p>
+		After a screen reader user has navigated to the heading of the section they are interested in, they will use the
+		arrow keys to start reading from that point.
+	</p>
+	<ul>
+		<li><kbd aria-label="arrow down">↓</kbd> reads the next line.</li>
+		<li><kbd aria-label="arrow up">↑</kbd> reads the previous line.</li>
+		<li><kbd aria-label="arrow right">→</kbd> reads the next character.</li>
+		<li><kbd aria-label="arrow left">←</kbd> reads the previous character.</li>
+		<li>
+			<kbd>CTRL</kbd> + <kbd aria-label="arrow right">→</kbd> reads the next word.
+		</li>
+		<li>
+			<kbd>CTRL</kbd> + <kbd aria-label="arrow left">←</kbd> reads the previous word.
+		</li>
+	</ul>
+	<p>
+		Try it out below
+	</p>
+
+	<section class="question-setup" aria-labelledby="question-setup-title">
+		<h2 id="question-setup-title">Excerpt from: <cite>The Lion, the Witch and the Wardrobe</cite></h2>
+		<p>
+			A few mornings later Peter and Edmund were looking at the suit of armour and wondering if they could take it to
+			bits when the two girls rushed into the room and said, “Look out! Here comes the Macready and a whole gang with
+			her.”
+		</p>
+		<p>
+			“Sharp’s the word,” said Peter, and all four made off through the door at the far end of the room. But when they
+			had got out into the Green Room and beyond it, into the Library, they suddenly heard voices ahead of them, and
+			realized that Mrs Macready must be bringing her party of sightseers up the back stairs – instead of up the front
+			stairs as they had expected. And after that – whether it was that they lost their heads, or that Mrs Macready was
+			trying to catch them, or that some magic in the house had come to life and was chasing them into Narnia they
+			seemed to find themselves being followed everywhere, until at last Susan said, “Oh bother those trippers! Here –
+			let’s get into the Wardrobe Room till they’ve passed. No one will follow us in there.”
+		</p>
+	</section>
+
+	<form id="start" action="question1.html" method="get" aria-label="next step">
+		<button type="submit">
+			<span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
+			Got it!
+		</button>
+	</form>
+</body>
+
+</html>
