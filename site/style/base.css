@@ -28,6 +28,7 @@ html {
 	background-color: var(--bg);
 	color: var(--fg);
 
+	font-size: 1.125em;
 	padding: 16px;
 }
 
