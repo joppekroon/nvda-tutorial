@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NVDA key - Screen Reader Quiz</title>
+
+	<link rel="stylesheet" href="style/base.css">
+	<link rel="stylesheet" href="style/button.css">
+	<link rel="stylesheet" href="style/question.css">
+
+	<link rel="icon" href="favicon.svg">
+</head>
+
+<body>
+	<h1>NVDA key</h1>
+
+	<p>
+		Instead of repeatedly presssing <kbd aria-label="arrow down">↓</kbd>, you can tell NVDA to start reading with
+		<kbd>NVDA</kbd> + <kbd aria-label="arrow down">↓</kbd> until you tell it to stop again with <kbd>CTRL</kbd> or any
+		other command.
+	</p>
+	<p>
+		By default the <kbd>NVDA</kbd> key is <kbd>Insert</kbd>, but this can be changed to <kbd>Caps Lock</kbd> in the
+		settings, which can be useful for reduced keyboard layouts like in some laptops.
+	</p>
+	<p>
+		Finally, if you need to review what was said, <kbd>NVDA</kbd> + <kbd aria-label="arrow up">↑</kbd> will read the
+		current line again.
+	</p>
+
+	<p>
+		Try it out below
+	</p>
+
+	<section class="question-setup" aria-labelledby="question-setup-title">
+		<h2 id="question-setup-title">Excerpt from: <cite>Brave New World</cite></h2>
+
+		<p>
+			Just to give you a general idea,’ he would explain to them. For of course some sort of general idea they must
+			have, if they were to do their work intelligently — though as little of one, if they were to be good and happy
+			members of society, as possible. For particulars, as everyone knows, make for virtue and happiness; generalities
+			are intellectually necessary evils. Not philosophers, but fret-sawyers and stamp collectors compose the backbone
+			of society.
+		</p>
+
+		<p>
+			‘Tomorrow,’ he would add, smiling at them with a slightly menacing geniality, ‘you’ll be settling down to serious
+			work. You won’t have time for generalities. Meanwhile&hellip;’
+		</p>
+
+		<p>
+			Meanwhile, it was a privilege. Straight from the horse’s mouth into the note-book. The boys scribbled like mad.
+		</p>
+
+	</section>
+
+	<form id="start" action="question1.html" method="get" aria-label="next step">
+		<button type="submit">
+			<span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
+			Let's move on!
+		</button>
+	</form>
+</body>
+
+</html>
