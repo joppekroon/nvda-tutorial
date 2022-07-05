@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Elements List Dialog - Screen Reader Quiz</title>
+
+	<link rel="stylesheet" href="style/base.css">
+	<link rel="stylesheet" href="style/button.css">
+	<link rel="stylesheet" href="style/question.css">
+
+	<link rel="icon" href="favicon.svg">
+	<style>
+		.inline-warning-symbol {
+			vertical-align: middle;
+		}
+
+		aside[aria-labelledby][tabindex] {
+			overflow: auto;
+		}
+
+		aside[aria-labelledby][tabindex]:focus {
+			outline: .1em solid var(--fg);
+		}
+
+		caption {
+			text-align: left;
+		}
+
+		th {
+			text-align: left;
+		}
+
+		th,
+		td {
+			padding-right: 16px;
+			vertical-align: baseline;
+		}
+
+		.instructions {
+			margin-top: 32px;
+			font-size: 0.8em;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Elements List Dialog</h1>
+	</header>
+
+	<main>
+		<p>
+			If you press <kbd>NVDA</kbd> + <kbd>F7</kbd>, NVDA will show a popup with a list of all the links, headings, form
+			fields, buttons, and landmarks of the page.
+		</p>
+
+		<aside aria-labelledby="caret-title">
+			<h2 id="caret-title">Caret browsing</h2>
+
+			<p>
+				Sometimes, the browser will ask to enable <a href="https://en.wikipedia.org/wiki/Caret_navigation">Caret
+					browsing</a>, just select 'Cancel'.
+			</p>
+			<p>
+				<span class="material-symbols-outlined inline-warning-symbol" aria-label="warning.">warning</span> Do not check
+				the box to 'never ask
+				again'.
+			</p>
+			<p>
+				If the Caret browsing popup keeps appearing, you may need to restart your browser.
+			</p>
+		</aside>
+
+		<p>
+			If you are unfamiliar with landmarks, these are the larger sections of a page, offering screen reader users a
+			coarser but quicker way of navigating a page than jumping through all the links, headings, etc.
+		</p>
+
+		<p>
+			Try it out, you should be able to see a few landmarks on this page.
+		</p>
+
+		<p>
+			You can navigate the Elements List dialog using <kbd>TAB</kbd>, <kbd>SHIFT</kbd> + <kbd>TAB</kbd>, the arrow keys
+			<kbd
+				aria-hidden="true">↓</kbd> <kbd aria-hidden="true">↑</kbd> <kbd aria-hidden="true">→</kbd> <kbd
+				aria-hidden="true">←</kbd>, and <kbd>ENTER</kbd>.
+		</p>
+
+		<aside aria-labelledby="html-landmarks-title" tabindex="0">
+			<table>
+				<caption>
+					<h2 id="html-landmarks-title">Landmarks in HTML</h2>
+				</caption>
+				<tr>
+					<th scope="col">Type</th>
+					<th scope="col">HTML</th>
+					<th scope="col">Note</th>
+				</tr>
+				<tr>
+					<th scope="row">banner</th>
+					<td><code>&lt;header&gt;</code></td>
+					<td>Cannot be embedded in another landmark.</td>
+				</tr>
+				<tr>
+					<th scope="row">content info</th>
+					<td><code>&lt;footer&gt;</code></td>
+					<td>Cannot be embedded in another landmark.</td>
+				</tr>
+				<tr>
+					<th scope="row">main</th>
+					<td><code>&lt;main&gt;</code></td>
+					<td>There should only be one.</td>
+				</tr>
+				<tr>
+					<th scope="row">navigation</th>
+					<td><code>&lt;nav&gt;</code></td>
+					<td>Can occur multiple times, consider labelling!</td>
+				</tr>
+				<tr>
+					<th scope="row">complementary</th>
+					<td><code>&lt;aside&gt;</code></td>
+					<td>Can occur multiple times, consider labelling!</td>
+				</tr>
+				<tr>
+					<th scope="row">region</th>
+					<td><code>&lt;section&gt;</code></td>
+					<td>Must be labeled. Can occur multiple times.</td>
+				</tr>
+				<tr>
+					<th scope="row">form</th>
+					<td><code>&lt;form&gt;</code></td>
+					<td>Must be labeled. Can occur multiple times.</td>
+				</tr>
+				<tr>
+					<th scope="row">search</th>
+					<td><code>role="search"</code></td>
+					<td>Can occur multiple times, consider labelling!</td>
+				</tr>
+			</table>
+			<div class="instructions">
+				<p>
+					You can navigate between tables with <kbd>T</kbd>, then use <kbd aria-label="arrow down">↓</kbd> to
+					reach the table proper.
+				</p>
+				<p>
+					When in the table use <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd aria-label="arrow down">↓</kbd>, <kbd
+						aria-label="arrow up">↑</kbd>, <kbd aria-label="arrow right">→</kbd>, and <kbd
+						aria-label="arrow left">←</kbd> to navigate the cells.
+				</p>
+			</div>
+		</aside>
+
+		<form id="start" action="question1.html" method="get" aria-label="next step">
+			<button type="submit">
+				<span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
+				Let's move on!
+			</button>
+		</form>
+	</main>
+</body>
+
+</html>
