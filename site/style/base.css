@@ -15,12 +15,15 @@ html {
 
 	--accent: hsl(var(--accent-h) var(--accent-s) var(--accent-l));
 	--on-accent: white;
+
+	--code: rebeccapurple;
 }
 
 @media (prefers-color-scheme: dark) {
 	html {
 		--bg: #1b1b1b;
 		--fg: ghostwhite;
+		--code: yellow;
 	}
 }
 
@@ -93,6 +96,10 @@ kbd {
 	line-height: 1;
 	padding: 2px 4px;
 	white-space: nowrap;
+}
+
+code {
+	color: var(--code);
 }
 
 aside {
