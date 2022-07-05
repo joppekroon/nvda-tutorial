@@ -27,6 +27,6 @@ fieldset {
 }
 
 .radio-input:focus-visible {
-	outline: 2px solid var(--fg);
+	outline: 0.1em solid var(--fg);
 	outline-offset: 2px;
 }
