@@ -23,6 +23,8 @@ html {
 	--on-accent: white;
 
 	--code: rebeccapurple;
+
+	color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,6 +32,8 @@ html {
 		--bg: #1b1b1b;
 		--fg: ghostwhite;
 		--code: yellow;
+
+		color-scheme: dark;
 	}
 }
 

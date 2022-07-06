@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Focus Mode - Screen Reader Quiz</title>
+
+	<link rel="stylesheet" href="style/base.css">
+	<link rel="stylesheet" href="style/button.css">
+	<link rel="stylesheet" href="style/question.css">
+
+	<link rel="icon" href="favicon.svg">
+
+	<style>
+		.test-field {
+			margin-block: 2rem;
+			display: flex;
+			flex-direction: column;
+		}
+
+		input {
+			width: fit-content;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Focus Mode</h1>
+	</header>
+
+	<main>
+		<p>
+			We have already seen that NVDA uses some single keys for easy navigation. However, when you want to fill in a form
+			or arrow right to open a submenu you need those keys to do something else.
+		</p>
+		<p>
+			Fortunately, when you <kbd>TAB</kbd> to a form field or properly coded custom control, NVDA will automatically
+			switch to 'Focus mode'. In this mode NVDA will allow the browser to handle all key strokes, except for
+			<kbd>NVDA</kbd> + <kbd>SPACE</kbd> which will re-activate the original 'Browse mode'.
+		</p>
+		<p>
+			When 'Focus mode' activates you'll hear a 'chunk' sound, and a 'boop' sound is played when 'Browse mode'
+			activates.
+		</p>
+	</main>
+
+	<section class="question-setup" aria-labelledby="playground-title">
+		<h2 id="playground-title">Playground</h2>
+
+		<p>
+			Tab to the test field, and use <kbd>NVDA</kbd> + <kbd>SPACE</kbd> to force NVDA back to 'Browse mode'.
+		</p>
+
+		<div class="test-field">
+			<label for="text-input">Test field</label>
+			<input id="text-input" type="text">
+		</div>
+
+		<p>
+			You can also activate the text field by pressing <kbd>ENTER</kbd> while 'on' the field or label in 'Browse mode'.
+		</p>
+	</section>
+
+
+	<form id="start" action="question1.html" method="get" aria-label="next step">
+		<button type="submit">
+			<span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
+			Cool, next!
+		</button>
+	</form>
+
+	<footer>
+		<a href="index.html">Home</a>
+		<a href="site-map.html">Site Map</a>
+		<a href="privacy.html">Privacy Statement</a>
+	</footer>
+</body>
+
+</html>
