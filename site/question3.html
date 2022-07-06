@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Question 3 - Screen Reader Quiz</title>
+	<title>Are My Eyes Deceiving Me - Screen Reader Quiz</title>
 
 	<script src="script/question.js" defer></script>
 
@@ -17,64 +17,67 @@
 </head>
 
 <body>
-	<section class="question-setup" aria-labelledby="question-setup-title">
-		<h2 id="question-setup-title">List of random things</h2>
-		<ul>
-			<li>Slide Whistle</li>
-			<li>Snare Drum</li>
-			<li>Violin</li>
-			<li>Trombone</li>
-		</ul>
-	</section>
+	<header>
+		<h1>Are My Eyes Deceiving Me?</h1>
+	</header>
 
-	<form action="question4.html" method="get" aria-labelledby="question">
-		<fieldset class="radio-group">
-			<legend>
-				<h1 id="question">What is a string instrument?</h1>
-			</legend>
-
-			<div class="answers">
-				<label class="radio">
-					<input
-						type="radio"
-						class="radio-input"
-						value="A"
-						name="q3"
-						aria-label="a musical instrument that is sounded by being struck or scraped by a beater.">
-					<span aria-hidden="true">Slide Whistle</span>
-				</label>
-				<label class="radio">
-					<input
-						type="radio"
-						class="radio-input"
-						value="B"
-						name="q3"
-						aria-label="a musical instrument that produces sound from vibrating strings when a performer plays or sounds the strings in some manner.">
-					<span aria-hidden="true">Snare Drum</span>
-				</label>
-				<label class="radio">
-					<input
-						type="radio"
-						class="radio-input"
-						value="C"
-						name="q3"
-						aria-label="a musical instrument that contains some type of resonator (usually a tube) in which a column of air is set into vibration.">
-					<span aria-hidden="true">Violin</span>
-				</label>
-				<label class="radio">
-					<input
-						type="radio"
-						class="radio-input"
-						value="D"
-						name="q3"
-						aria-label="a musical instrument that produces sound using electronic circuitry.">
-					<span aria-hidden="true">Trombone</span>
-				</label>
-			</div>
-		</fieldset>
-
-		<button type="submit">Next Question</button>
-	</form>
+	<main>
+		<section class="question-setup" aria-labelledby="question-setup-title">
+			<h2 id="question-setup-title">List of random things</h2>
+			<ul>
+				<li>Slide Whistle</li>
+				<li>Snare Drum</li>
+				<li>Violin</li>
+				<li>Trombone</li>
+			</ul>
+		</section>
+		<form action="question4.html" method="get" aria-labelledby="question">
+			<fieldset class="radio-group">
+				<legend>
+					<h2 id="question">What is a string instrument?</h2>
+				</legend>
+				<div class="answers">
+					<label class="radio">
+						<input
+							type="radio"
+							class="radio-input"
+							value="A"
+							name="q3"
+							aria-label="a musical instrument that is sounded by being struck or scraped by a beater.">
+						<span aria-hidden="true">Slide Whistle</span>
+					</label>
+					<label class="radio">
+						<input
+							type="radio"
+							class="radio-input"
+							value="B"
+							name="q3"
+							aria-label="a musical instrument that produces sound from vibrating strings when a performer plays or sounds the strings in some manner.">
+						<span aria-hidden="true">Snare Drum</span>
+					</label>
+					<label class="radio">
+						<input
+							type="radio"
+							class="radio-input"
+							value="C"
+							name="q3"
+							aria-label="a musical instrument that contains some type of resonator (usually a tube) in which a column of air is set into vibration.">
+						<span aria-hidden="true">Violin</span>
+					</label>
+					<label class="radio">
+						<input
+							type="radio"
+							class="radio-input"
+							value="D"
+							name="q3"
+							aria-label="a musical instrument that produces sound using electronic circuitry.">
+						<span aria-hidden="true">Trombone</span>
+					</label>
+				</div>
+			</fieldset>
+			<button type="submit">Next Question</button>
+		</form>
+	</main>
 </body>
 
 </html>

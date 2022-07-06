@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Question 1 - Screen Reader Quiz</title>
+	<title>Everything in Order - Screen Reader Quiz</title>
 
 	<script src="script/question.js" defer></script>
 
@@ -29,44 +29,47 @@
 </head>
 
 <body>
-	<section class="question-setup" aria-labelledby="question-setup-title">
-		<h2 id="question-setup-title">List of random things</h2>
-		<ul role="list" class="quiz">
-			<li class="item">Thermometer</li>
-			<li class="item">Hanger</li>
-			<li class="item">Cat</li>
-			<li class="item">Tomato</li>
-		</ul>
-	</section>
+	<header>
+		<h1>Everything in Order?</h1>
+	</header>
 
-	<form id="form" action="question2.html" method="get" aria-labelledby="question">
-		<fieldset class="radio-group">
-			<legend>
-				<h1 id="question">What is the third list item?</h1>
-			</legend>
-
-			<div class="answers">
-				<label class="radio">
-					<input type="radio" name="q1" value="A" class="radio-input">
-					Thermometer
-				</label>
-				<label class="radio">
-					<input type="radio" name="q1" value="B" class="radio-input">
-					Hanger
-				</label>
-				<label class="radio">
-					<input type="radio" name="q1" value="C" class="radio-input">
-					Tomato
-				</label>
-				<label class="radio">
-					<input type="radio" name="q1" value="D" class="radio-input">
-					Cat
-				</label>
-			</div>
-		</fieldset>
-
-		<button type="submit">Next Question</button>
-	</form>
+	<main>
+		<section class="question-setup" aria-labelledby="question-setup-title">
+			<h2 id="question-setup-title">List of random things</h2>
+			<ul role="list" class="quiz">
+				<li class="item">Thermometer</li>
+				<li class="item">Hanger</li>
+				<li class="item">Cat</li>
+				<li class="item">Tomato</li>
+			</ul>
+		</section>
+		<form id="form" action="question2.html" method="get" aria-labelledby="question">
+			<fieldset class="radio-group">
+				<legend>
+					<h2 id="question">What is the third list item?</h2>
+				</legend>
+				<div class="answers">
+					<label class="radio">
+						<input type="radio" name="q1" value="A" class="radio-input">
+						Thermometer
+					</label>
+					<label class="radio">
+						<input type="radio" name="q1" value="B" class="radio-input">
+						Hanger
+					</label>
+					<label class="radio">
+						<input type="radio" name="q1" value="C" class="radio-input">
+						Tomato
+					</label>
+					<label class="radio">
+						<input type="radio" name="q1" value="D" class="radio-input">
+						Cat
+					</label>
+				</div>
+			</fieldset>
+			<button type="submit">Next Question</button>
+		</form>
+	</main>
 </body>
 
 </html>

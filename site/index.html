@@ -14,40 +14,43 @@
 </head>
 
 <body>
-	<h1>Screen Reader Quiz</h1>
-	<noscript>
-		JS must be enabled to keep track of the answers.
-	</noscript>
+	<header>
+		<h1>Screen Reader Quiz</h1>
+	</header>
+	<main>
+		<noscript>
+			JS must be enabled to keep track of the answers.
+		</noscript>
+		<p>
+			Start up NVDA, and click the button.
+		</p>
+		<p>
+			<a href="https://www.nvaccess.org/download/">Install NVDA</a> if you don't have it yet.
+		</p>
 
-	<p>
-		Start up NVDA, and click the button.
-	</p>
-	<p>
-		<a href="https://www.nvaccess.org/download/">Install NVDA</a> if you don't have it yet.
-	</p>
-
-	<form id="start" action="pre-flight-check1.html" method="get" aria-label="next step">
-		<button type="submit">
-			<span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
-			Let's get started!
-		</button>
-
-		<details>
-			<summary>
-				I've Been Here Before...
-			</summary>
-			<button type="reset">
-				<span class="material-symbols-outlined" aria-hidden="true">delete</span>
-				Clear old answers
+		<form id="start" action="pre-flight-check1.html" method="get" aria-label="next step">
+			<button type="submit">
+				<span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
+				Let's get started!
 			</button>
-			<button type="submit" formaction="question1.html">
-				<span class="material-symbols-outlined" aria-hidden="true">fast_forward</span>
-				Skip instructions
-			</button>
-		</details>
-	</form>
 
-	<div aria-live="polite" id="messages"></div>
+			<details>
+				<summary>
+					I've Been Here Before...
+				</summary>
+				<button type="reset">
+					<span class="material-symbols-outlined" aria-hidden="true">delete</span>
+					Clear old answers
+				</button>
+				<button type="submit" formaction="question1.html">
+					<span class="material-symbols-outlined" aria-hidden="true">fast_forward</span>
+					Skip instructions
+				</button>
+			</details>
+		</form>
+
+		<div aria-live="polite" id="messages"></div>
+	</main>
 
 	<script>
 		const startForm = document.querySelector('#start');

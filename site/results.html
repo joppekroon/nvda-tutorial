@@ -44,121 +44,127 @@
 </head>
 
 <body>
-	<h1>Your Screen Reader Quiz Results</h1>
-	<p>
-		Score: <span id="score"></span> out of 5. <a href="index.html">Go again!</a>
-	</p>
+	<header>
+		<h1>Your Screen Reader Quiz Results</h1>
+	</header>
 
-	<h2>
-		<a href="question1.html">
-			Question 1: Which is the third list item?
-		</a>
-	</h2>
-	<p>
-		<span id="q1-correct" class="correct hidden">
-			<span class="result-icon" aria-hidden="true">✓</span> Correct
-		</span>
-		<span id="q1-failed" class="failed hidden">
-			<span class="result-icon" aria-hidden="true">✕</span> Incorrect
-		</span>
-		:
-		<span id="q1-answer"></span>
-	</p>
-	<details>
-		<summary>Show solution</summary>
+	<main>
 		<p>
-			The order of the items has been changed in CSS, but the screen reader only looks at the order in the HTML.
+			Score: <span id="score"></span> out of 5. <a href="index.html">Go again!</a>
 		</p>
-	</details>
 
-	<h2>
-		<a href="question2.html">
-			Question 2: What is the last list item?
-		</a>
-	</h2>
-	<p>
-		<span id="q2-correct" class="correct hidden">
-			<span class="result-icon" aria-hidden="true">✓</span> Correct
-		</span>
-		<span id="q2-failed" class="failed hidden">
-			<span class="result-icon" aria-hidden="true">✕</span> Incorrect
-		</span>
-		:
-		<span id="q2-answer"></span>
-	</p>
-	<details>
-		<summary>Show solution</summary>
+		<h2>
+			<a href="question1.html">
+				Everything in Order?
+			</a>
+		</h2>
 		<p>
-			The last list item and radio button have been visually hidden, but they are visible to the screen reader.
+			<span id="q1-correct" class="correct hidden">
+				<span class="result-icon" aria-hidden="true">✓</span> Correct
+			</span>
+			<span id="q1-failed" class="failed hidden">
+				<span class="result-icon" aria-hidden="true">✕</span> Incorrect
+			</span>
+			:
+			<span id="q1-answer"></span>
 		</p>
-	</details>
+		<details>
+			<summary>Show solution</summary>
+			<p>
+				The order of the items has been changed in CSS, but the screen reader only looks at the order in the HTML.
+			</p>
+		</details>
 
-	<h2>
-		<a href="question3.html">
-			Question 3: What is a string instrument?
-		</a>
-	</h2>
-	<p>
-		<span id="q3-correct" class="correct hidden">
-			<span class="result-icon" aria-hidden="true">✓</span> Correct
-		</span>
-		<span id="q3-failed" class="failed hidden">
-			<span class="result-icon" aria-hidden="true">✕</span> Incorrect
-		</span>
-		:
-		<span id="q3-answer"></span>
-	</p>
-	<details>
-		<summary>Show solution</summary>
+		<h2>
+			<a href="question2.html">
+				I Spy With My Little Eye
+			</a>
+		</h2>
 		<p>
-			The labels of the radio buttons have been replaced with definitions of types of instruments using
-			<code>aria-label</code> and <code>aria-hidden</code>. The list of items is just a decoy.
+			<span id="q2-correct" class="correct hidden">
+				<span class="result-icon" aria-hidden="true">✓</span> Correct
+			</span>
+			<span id="q2-failed" class="failed hidden">
+				<span class="result-icon" aria-hidden="true">✕</span> Incorrect
+			</span>
+			:
+			<span id="q2-answer"></span>
 		</p>
-	</details>
+		<details>
+			<summary>Show solution</summary>
+			<p>
+				The last list item and corresponding radio button have been visually hidden, but they are visible to the screen
+				reader.
+			</p>
+		</details>
 
-	<h2>
-		<a href="question4.html">
-			Question 4: Which image is the red brick?
-		</a>
-	</h2>
-	<p>
-		<span id="q4-correct" class="correct hidden">
-			<span class="result-icon" aria-hidden="true">✓</span> Correct
-		</span>
-		<span id="q4-failed" class="failed hidden">
-			<span class="result-icon" aria-hidden="true">✕</span> Incorrect
-		</span>
-		:
-		<span id="q4-answer"></span>
-	</p>
-	<details>
-		<summary>Show solution</summary>
+		<h2>
+			<a href="question3.html">
+				Are My Eyes Deceiving Me?
+			</a>
+		</h2>
 		<p>
-			The alt texts do not match the pictures, one image is even made invisible due to an empty alt attribute.
+			<span id="q3-correct" class="correct hidden">
+				<span class="result-icon" aria-hidden="true">✓</span> Correct
+			</span>
+			<span id="q3-failed" class="failed hidden">
+				<span class="result-icon" aria-hidden="true">✕</span> Incorrect
+			</span>
+			:
+			<span id="q3-answer"></span>
 		</p>
-	</details>
+		<details>
+			<summary>Show solution</summary>
+			<p>
+				The labels of the radio buttons have been replaced with definitions of types of instruments using
+				<code>aria-label</code> and <code>aria-hidden</code>. The list of items is just a decoy.
+			</p>
+		</details>
 
-	<h2>
-		<a href="question5.html">
-			Question 5: Which is the fifth link?
-		</a>
-	</h2>
-	<p>
-		<span id="q5-correct" class="correct hidden">
-			<span class="result-icon" aria-hidden="true">✓</span> Correct
-		</span>
-		<span id="q5-failed" class="failed hidden">
-			<span class="result-icon" aria-hidden="true">✕</span> Incorrect
-		</span>
-		:
-		<span id="q5-answer"></span>
-	</p>
-	<details>
-		<summary>Show solution</summary>
+		<h2>
+			<a href="question4.html">
+				A Picture is Worth a Thousand Words
+			</a>
+		</h2>
 		<p>
-			One link has it's underline removed, and some underlined words are not links at all.
+			<span id="q4-correct" class="correct hidden">
+				<span class="result-icon" aria-hidden="true">✓</span> Correct
+			</span>
+			<span id="q4-failed" class="failed hidden">
+				<span class="result-icon" aria-hidden="true">✕</span> Incorrect
+			</span>
+			:
+			<span id="q4-answer"></span>
 		</p>
-	</details>
+		<details>
+			<summary>Show solution</summary>
+			<p>
+				The alt texts do not match the pictures, one image is even made invisible due to an empty alt attribute.
+			</p>
+		</details>
+
+		<h2>
+			<a href="question5.html">
+				Mark My Words
+			</a>
+		</h2>
+		<p>
+			<span id="q5-correct" class="correct hidden">
+				<span class="result-icon" aria-hidden="true">✓</span> Correct
+			</span>
+			<span id="q5-failed" class="failed hidden">
+				<span class="result-icon" aria-hidden="true">✕</span> Incorrect
+			</span>
+			:
+			<span id="q5-answer"></span>
+		</p>
+		<details>
+			<summary>Show solution</summary>
+			<p>
+				One link has it's underline removed, and some underlined words are not links at all.
+			</p>
+		</details>
+	</main>
 
 	<script>
 		function processAnswer(key, correctAnswer) {
