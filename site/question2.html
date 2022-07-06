@@ -33,48 +33,47 @@
 		<h1>I Spy With My Little Eye</h1>
 	</header>
 
-	<main>
-		<section class="question-setup" aria-labelledby="question-setup-title">
-			<h2 id="question-setup-title">List of random things</h2>
-			<ul>
-				<li>Pencil</li>
-				<li>Blouse</li>
-				<li>Bowtie</li>
-				<li>Chair</li>
-				<li class="visually-hidden">Wagon</li>
-			</ul>
-		</section>
-		<form action="question3.html" method="get" aria-labelledby="question">
-			<fieldset class="radio-group">
-				<legend>
-					<h2 id="question">What is the last list item?</h2>
-				</legend>
-				<div class="answers">
-					<label class="radio">
-						<input type="radio" name="q2" value="A" class="radio-input">
-						Chair
-					</label>
-					<label class="radio visually-hidden">
-						<input type="radio" name="q2" value="B" class="radio-input">
-						Wagon
-					</label>
-					<label class="radio">
-						<input type="radio" name="q2" value="C" class="radio-input">
-						Pencil
-					</label>
-					<label class="radio">
-						<input type="radio" name="q2" value="D" class="radio-input">
-						Bowtie
-					</label>
-					<label class="radio">
-						<input type="radio" name="q2" value="E" class="radio-input">
-						Blouse
-					</label>
-				</div>
-			</fieldset>
-			<button type="submit">Next Question</button>
-		</form>
-	</main>
+	<section class="question-setup" aria-labelledby="question-setup-title">
+		<h2 id="question-setup-title">List of random things</h2>
+		<ul>
+			<li>Pencil</li>
+			<li>Blouse</li>
+			<li>Bowtie</li>
+			<li>Chair</li>
+			<li class="visually-hidden">Wagon</li>
+		</ul>
+	</section>
+
+	<form action="question3.html" method="get" aria-labelledby="question">
+		<fieldset class="radio-group">
+			<legend>
+				<h2 id="question">What is the last list item?</h2>
+			</legend>
+			<div class="answers">
+				<label class="radio">
+					<input type="radio" name="q2" value="A" class="radio-input">
+					Chair
+				</label>
+				<label class="radio visually-hidden">
+					<input type="radio" name="q2" value="B" class="radio-input">
+					Wagon
+				</label>
+				<label class="radio">
+					<input type="radio" name="q2" value="C" class="radio-input">
+					Pencil
+				</label>
+				<label class="radio">
+					<input type="radio" name="q2" value="D" class="radio-input">
+					Bowtie
+				</label>
+				<label class="radio">
+					<input type="radio" name="q2" value="E" class="radio-input">
+					Blouse
+				</label>
+			</div>
+		</fieldset>
+		<button type="submit">Next Question</button>
+	</form>
 
 	<footer>
 		<a href="index.html">Home</a>
