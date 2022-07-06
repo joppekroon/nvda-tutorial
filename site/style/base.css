@@ -5,6 +5,12 @@
 	box-sizing: border-box;
 }
 
+html,
+body {
+	margin: 0;
+	height: 100%;
+}
+
 html {
 	--bg: ghostwhite;
 	--fg: #1b1b1b;
@@ -37,6 +43,8 @@ html {
 
 body {
 	max-width: 60ch;
+	display: flex;
+	flex-direction: column;
 }
 
 @font-face {
@@ -108,4 +116,16 @@ aside {
 	border: 1px solid var(--accent);
 	border-left-width: 16px;
 	border-radius: 8px;
+}
+
+footer {
+	margin-top: auto;
+
+	padding: 16px;
+	margin-inline: -16px;
+
+	display: flex;
+	flex-direction: column;
+
+	border-top: 0.1em solid var(--fg);
 }
