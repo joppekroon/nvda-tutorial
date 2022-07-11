@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hide and Seek - Screen Reader Quiz</title>
+
+	<link rel="stylesheet" href="style/base.css">
+	<link rel="stylesheet" href="style/button.css">
+	<link rel="stylesheet" href="style/question.css">
+
+	<link rel="icon" href="favicon.svg">
+
+	<script src="script/question.js" defer></script>
+
+	<style>
+		.test-field {
+			margin-block: 2rem;
+			display: flex;
+			flex-direction: column;
+		}
+
+		input {
+			width: fit-content;
+		}
+
+		#ready-field+.word-container {
+			display: none;
+		}
+
+		#ready-field:not(:invalid)+.word-container {
+			display: block;
+		}
+
+		.word-container [aria-hidden="true"] {
+			background-color: var(--fg);
+			color: var(--fg);
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Hide and Seek</h1>
+	</header>
+
+	<main>
+		<p>
+			Type anything in the 'Type something' field to make the hidden word appear.
+		</p>
+		<p>
+			And spell the word correctly in the 'The hidden word is' field.
+		</p>
+
+
+		<section class="question-setup" aria-labelledby="question-setup-title">
+			<h2 id="question-setup-title">There's a word hiding below</h2>
+			<div class="test-field">
+				<label for="ready-field">Type something!</label>
+				<input type="text" id="ready-field" required>
+
+				<div class="word-container">
+					<span class="visually-hidden">Finagle</span>
+					<span aria-hidden="true">No cheating!</span>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<form id="start" action="elements-list-dialog.html" method="get">
+		<div class="test-field">
+			<label for="answer-field">The hidden word is:</label>
+			<input type="text" id="answer-field" name="q000">
+		</div>
+		<button type="submit">
+			<span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
+			No problem!
+		</button>
+	</form>
+
+	<footer>
+		<a href="index.html">Home</a>
+		<a href="site-map.html">Site Map</a>
+		<a href="privacy.html">Privacy Statement</a>
+	</footer>
+</body>
+
+</html>
