@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Hard of Hearing - Screen Reader Quiz</title>
+	<title>The Final Question - Screen Reader Quiz</title>
 
 	<link rel="stylesheet" href="style/base.css">
 	<link rel="stylesheet" href="style/button.css">
@@ -25,59 +25,74 @@
 		input {
 			width: fit-content;
 		}
+
+		#ready-field+.hidden-area {
+			visibility: hidden;
+		}
+
+		#ready-field:not(:invalid)+.hidden-area {
+			visibility: visible;
+		}
+
+		.hidden-area {
+			background-color: var(--fg);
+			color: var(--fg);
+			font-size: .5em;
+		}
 	</style>
 </head>
 
 <body>
 	<header>
-		<h1>Hard of Hearing</h1>
+		<h1>The Final Question</h1>
 	</header>
 
 	<main>
-		<noscript>
-			<p>
-				Unfortunately, this question won't work without javascript.
-			</p>
-		</noscript>
-
 		<p>
-			Click the button and type the word you hear.
+			Type anything in the 'Type something' field to make the hidden area appear.
 		</p>
 		<p>
-			Use the speech viewer and you can just see how it is spelled there!
+			Find the word directly below the level 4 heading.
+			And spell the word correctly in the 'The word is' field.
 		</p>
 
-		<button type="button" id="narrate">
-			<span class="material-symbols-outlined" aria-hidden="true">voice_chat</span>
-			Tell me the word
-		</button>
+		<section class="question-setup" aria-labelledby="question-setup-title">
+			<h2 id="question-setup-title">There's a lot hiding below</h2>
+			<div class="test-field">
+				<label for="ready-field">Type something!</label>
+				<input type="text" id="ready-field" required>
 
-		<section class="question-setup visually-hidden" aria-labelledby="question-setup-title">
-			<h2 id="question-setup-title">It is one of these words</h2>
-
-			<ul>
-				<li>
-					<span id="ignominous-0">ignominous</span>
-				</li>
-				<li>
-					<span id="onomatopoeia-0">onomatopoeia</span>
-					<span id="onomatopoeia-a" aria-live="polite"></span>
-					<span id="onomatopoeia-b" aria-live="polite"></span>
-				</li>
-				<li><span id="anomalous-0">anomalous</span></li>
-				<li><span id="quiescance-0">quiescance</span></li>
-			</ul>
+				<div class="hidden-area">
+					<span aria-hidden="true">No cheating!</span>
+					<h2>This is a heading</h2>
+					<p>Done</p>
+					<h3>This is also a heading</h3>
+					<p>Finito</p>
+					<h2>Again a heading</h2>
+					<p>Stop</p>
+					<h3>Maybe it is this heading</h3>
+					<p>Seriously</p>
+					<h3>Or possibly this heading</h3>
+					<p>Alright</p>
+					<h4>Surely it must be this heading</h4>
+					<p>Finish</p>
+					<h5>I'm getting bored of all the headings</h5>
+					<p>Over</p>
+					<h2>Ok, this is the last heading</h2>
+					<p>Now</p>
+				</div>
+			</div>
 		</section>
 	</main>
 
-	<form id="start" action="the-final-question.html" method="get">
+	<form id="start" action="results.html" method="get">
 		<div class="test-field">
 			<label for="answer-field">The word is:</label>
 			<input type="text" id="answer-field" name="q0000">
 		</div>
 		<button type="submit">
-			<span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
-			One final question
+			<span class="material-symbols-outlined" aria-hidden="true">celebration</span>
+			Show me the results!
 		</button>
 	</form>
 
