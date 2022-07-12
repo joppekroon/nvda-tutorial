@@ -16,33 +16,6 @@
 		.inline-warning-symbol {
 			vertical-align: middle;
 		}
-
-		aside[aria-labelledby][tabindex] {
-			overflow: auto;
-		}
-
-		aside[aria-labelledby][tabindex]:focus {
-			outline: .1em solid var(--fg);
-		}
-
-		caption {
-			text-align: left;
-		}
-
-		th {
-			text-align: left;
-		}
-
-		th,
-		td {
-			padding-right: 16px;
-			vertical-align: baseline;
-		}
-
-		.instructions {
-			margin-top: 32px;
-			font-size: 0.8em;
-		}
 	</style>
 </head>
 
@@ -91,71 +64,6 @@
 				aria-hidden="true">↓</kbd> <kbd aria-hidden="true">↑</kbd> <kbd aria-hidden="true">→</kbd> <kbd
 				aria-hidden="true">←</kbd>, and <kbd>ENTER</kbd>.
 		</p>
-
-		<aside aria-labelledby="html-landmarks-title" tabindex="0">
-			<table>
-				<caption>
-					<h2 id="html-landmarks-title">Landmarks in HTML</h2>
-				</caption>
-				<tr>
-					<th scope="col">Type</th>
-					<th scope="col">HTML</th>
-					<th scope="col">Note</th>
-				</tr>
-				<tr>
-					<th scope="row">banner</th>
-					<td><code>&lt;header&gt;</code></td>
-					<td>Cannot be embedded in another landmark.</td>
-				</tr>
-				<tr>
-					<th scope="row">content info</th>
-					<td><code>&lt;footer&gt;</code></td>
-					<td>Cannot be embedded in another landmark.</td>
-				</tr>
-				<tr>
-					<th scope="row">main</th>
-					<td><code>&lt;main&gt;</code></td>
-					<td>There should only be one.</td>
-				</tr>
-				<tr>
-					<th scope="row">navigation</th>
-					<td><code>&lt;nav&gt;</code></td>
-					<td>Can occur multiple times, consider labelling!</td>
-				</tr>
-				<tr>
-					<th scope="row">complementary</th>
-					<td><code>&lt;aside&gt;</code></td>
-					<td>Can occur multiple times, consider labelling!</td>
-				</tr>
-				<tr>
-					<th scope="row">region</th>
-					<td><code>&lt;section&gt;</code></td>
-					<td>Must be labeled. Can occur multiple times.</td>
-				</tr>
-				<tr>
-					<th scope="row">form</th>
-					<td><code>&lt;form&gt;</code></td>
-					<td>Must be labeled. Can occur multiple times.</td>
-				</tr>
-				<tr>
-					<th scope="row">search</th>
-					<td><code>role="search"</code></td>
-					<td>Can occur multiple times, consider labelling!</td>
-				</tr>
-			</table>
-			<div class="instructions">
-				<p>
-					You can navigate between tables with <kbd>T</kbd>, then use <kbd aria-label="arrow down">↓</kbd> to
-					reach the table proper.
-				</p>
-				<p>
-					When in the table use <kbd>CTRL</kbd>&nbsp;+&nbsp;<kbd>ALT</kbd>&nbsp;+&nbsp;<kbd
-						aria-label="arrow down">↓</kbd>, <kbd
-						aria-label="arrow up">↑</kbd>, <kbd aria-label="arrow right">→</kbd>, and <kbd
-						aria-label="arrow left">←</kbd> to navigate the cells.
-				</p>
-			</div>
-		</aside>
 	</main>
 
 	<form id="start" action="mark-my-words.html" method="get" aria-label="next step">
