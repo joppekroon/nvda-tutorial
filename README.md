@@ -1,3 +1,3 @@
 # NVDA Tutorial
 
-For visual users to practice with using a screen reader.
+This tutorial intends to teach visual users the basics of the NVDA screen reader, so that they are able to use the screen reader for testing.
