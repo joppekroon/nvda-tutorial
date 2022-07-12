@@ -1,0 +1,146 @@
+*,
+*::before,
+*::after {
+	line-height: 1.5;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	height: 100%;
+}
+
+html {
+	--bg: ghostwhite;
+	--fg: #1b1b1b;
+
+	--accent-h: 225deg;
+	--accent-s: 73%;
+	--accent-l: 57%;
+
+	--accent: hsl(var(--accent-h) var(--accent-s) var(--accent-l));
+	--on-accent: white;
+
+	--code: rebeccapurple;
+
+	color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		--bg: #1b1b1b;
+		--fg: ghostwhite;
+		--code: yellow;
+
+		color-scheme: dark;
+	}
+}
+
+html {
+	background-color: var(--bg);
+	color: var(--fg);
+
+	font-size: 1.125em;
+	padding: 16px;
+}
+
+body {
+	max-width: 60ch;
+	display: flex;
+	flex-direction: column;
+}
+
+@font-face {
+	font-family: 'Material Symbols Outlined';
+	font-style: normal;
+	font-weight: 100 700;
+	src: url(../fonts/material-icons.woff2) format('woff2');
+}
+
+.material-symbols-outlined {
+	font-family: 'Material Symbols Outlined';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+}
+
+/* prettier-ignore */
+.material-symbols-outlined {
+	font-variation-settings:
+		'FILL' 0,
+		'wght' 400,
+		'GRAD' 0,
+		'opsz' 48
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1;
+}
+
+a {
+	color: var(--fg);
+}
+
+kbd {
+	background-color: #eee;
+	border-radius: 3px;
+	border: 1px solid #b4b4b4;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+	color: #333;
+	display: inline-block;
+	font-size: 0.85em;
+	font-weight: 700;
+	line-height: 1;
+	padding: 2px 4px;
+	white-space: nowrap;
+}
+
+code {
+	color: var(--code);
+}
+
+aside {
+	margin-block: 32px;
+	padding: 0 16px 8px 16px;
+	border: 1px solid var(--accent);
+	border-left-width: 16px;
+	border-radius: 8px;
+}
+
+footer {
+	margin-top: auto;
+
+	padding: 16px;
+	margin-inline: -16px;
+
+	display: flex;
+	flex-direction: column;
+
+	border-top: 0.1em solid var(--fg);
+}
+
+.visually-hidden {
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+}

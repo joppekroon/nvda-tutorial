@@ -1,0 +1,81 @@
+button {
+	margin-block: 2rem;
+}
+
+button + button {
+	margin-left: 2rem;
+}
+
+/* CSS */
+button {
+	appearance: none;
+	cursor: pointer;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1ch;
+
+	height: 3rem;
+	font-family: monospace;
+	font-size: calc(18rem / 16);
+	line-height: 1;
+
+	border-radius: 4px;
+	border-width: 1px;
+	border-color: transparent; /* for HCM */
+
+	padding-left: 16px;
+	padding-right: 16px;
+
+	background-color: var(--accent);
+	color: var(--on-accent);
+
+	will-change: box-shadow;
+}
+
+/* prettier-ignore */
+button {
+	--accent-transparent-40: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / 40%);
+	--accent-transparent-30: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / 30%);
+	--accent-dark: hsl(var(--accent-h) var(--accent-s) 20%);
+
+	box-shadow:
+		var(--accent-transparent-40) 0 2px 4px,
+		var(--accent-transparent-30) 0 7px 13px -3px,
+		var(--accent-dark) 0 -3px 0 inset;
+}
+
+/* prettier-ignore */
+button:hover,
+button:focus {
+	box-shadow:
+	var(--accent-transparent-40) 0 4px 8px,
+	var(--accent-transparent-30) 0 7px 13px -3px,
+	var(--accent-dark) 0 -3px 0 inset;
+}
+
+button:focus-visible {
+	outline: 0.1em solid var(--accent);
+	outline-offset: 4px;
+}
+
+button:active {
+	box-shadow: var(--accent-dark) 0 3px 7px inset;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	button {
+		transition: box-shadow 0.15s, transform 0.15s;
+		will-change: box-shadow, transform;
+	}
+
+	button:hover,
+	button:focus {
+		transform: translateY(-2px);
+	}
+
+	button:active {
+		transform: translateY(2px);
+	}
+}
