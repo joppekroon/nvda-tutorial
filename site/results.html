@@ -9,36 +9,28 @@
 
 	<link rel="stylesheet" href="style/base.css">
 	<style>
-		h2 {
-			margin-top: 4rem;
-		}
-
 		details {
-			margin-bottom: 4rem;
-		}
-
-		a {
-			color: currentColor;
+			margin-bottom: 2rem;
 		}
 
 		.hidden {
 			display: none;
 		}
 
-		.correct .result-icon {
+		.result-icon.correct {
 			color: #007936;
 		}
 
-		.failed .result-icon {
+		.result-icon.failed {
 			color: #d30038;
 		}
 
 		@media (prefers-color-scheme: dark) {
-			.correct .result-icon {
+			.result-icon.correct {
 				color: #00d061;
 			}
 
-			.failed .result-icon {
+			.result-icon.failed {
 				color: #ff97a0;
 			}
 		}
@@ -49,10 +41,8 @@
 
 <body>
 	<header>
-		<h1>Your Results: <span id="score"></span> out of 5</h1>
+		<h1>Your Results: <span id="score"></span> out of <span id="total"></span></h1>
 	</header>
-
-	<!-- TODO fix the questions/ answers -->
 
 	<main>
 		<p>
@@ -64,115 +54,105 @@
 				href="https://www.nvaccess.org/files/nvda/documentation/userGuide.html">NVDA User Guide</a>.
 		</p>
 
-		<h2>
-			<a href="question1.html">
-				Everything in Order?
-			</a>
-		</h2>
-		<p>
-			<span id="q1-correct" class="correct hidden">
-				<span class="result-icon" aria-hidden="true">✓</span> Correct
-			</span>
-			<span id="q1-failed" class="failed hidden">
-				<span class="result-icon" aria-hidden="true">✕</span> Incorrect
-			</span>
-			:
-			<span id="q1-answer"></span>
-		</p>
-		<details>
-			<summary>Show solution</summary>
+		<details id="sixth-result" class="result">
+			<summary>
+				<span id="sixth-correct" class="result-icon correct hidden" aria-label="Correct">✓</span>
+				<span id="sixth-failed" class="result-icon failed hidden" aria-label="Incorrect">✕</span>
+				<span>The Sixth Sense</span>
+			</summary>
 			<p>
-				The order of the items has been changed in CSS, but the screen reader only looks at the order in the HTML.
+				Given: <span id="sixth-given"></span>
+			</p>
+			<p>
+				Expected: <span id="sixth-expected">C</span>
+			</p>
+			<p>
+				To <a href="the-sixth-sense.html">The Sixth Sense</a>.
 			</p>
 		</details>
 
-		<h2>
-			<a href="question2.html">
-				I Spy With My Little Eye
-			</a>
-		</h2>
-		<p>
-			<span id="q2-correct" class="correct hidden">
-				<span class="result-icon" aria-hidden="true">✓</span> Correct
-			</span>
-			<span id="q2-failed" class="failed hidden">
-				<span class="result-icon" aria-hidden="true">✕</span> Incorrect
-			</span>
-			:
-			<span id="q2-answer"></span>
-		</p>
-		<details>
-			<summary>Show solution</summary>
+		<details id="spelling-result" class="result">
+			<summary>
+				<span id="spelling-correct" class="result-icon correct hidden" aria-label="Correct">✓</span>
+				<span id="spelling-failed" class="result-icon failed hidden" aria-label="Incorrect">✕</span>
+				<span>Spelling Bee</span>
+			</summary>
 			<p>
-				The last list item and corresponding radio button have been visually hidden, but they are visible to the screen
-				reader.
+				Given: <span id="spelling-given"></span>
+			</p>
+			<p>
+				Expected: <span id="spelling-expected">Fuchsia</span>
+			</p>
+			<p>
+				To <a href="spelling-bee.html">Spelling Bee</a>.
 			</p>
 		</details>
 
-		<h2>
-			<a href="question3.html">
-				Are My Eyes Deceiving Me?
-			</a>
-		</h2>
-		<p>
-			<span id="q3-correct" class="correct hidden">
-				<span class="result-icon" aria-hidden="true">✓</span> Correct
-			</span>
-			<span id="q3-failed" class="failed hidden">
-				<span class="result-icon" aria-hidden="true">✕</span> Incorrect
-			</span>
-			:
-			<span id="q3-answer"></span>
-		</p>
-		<details>
-			<summary>Show solution</summary>
+		<details id="hide-result" class="result">
+			<summary>
+				<span id="hide-correct" class="result-icon correct hidden" aria-label="Correct">✓</span>
+				<span id="hide-failed" class="result-icon failed hidden" aria-label="Incorrect">✕</span>
+				<span>Hide and Seek</span>
+			</summary>
 			<p>
-				The labels of the radio buttons have been replaced with definitions of types of instruments using
-				<code>aria-label</code> and <code>aria-hidden</code>. The list of items is just a decoy.
+				Given: <span id="hide-given"></span>
+			</p>
+			<p>
+				Expected: <span id="hide-expected">Finagle</span>
+			</p>
+			<p>
+				To <a href="hide-and-seek.html">Hide and Seek</a>.
 			</p>
 		</details>
 
-		<h2>
-			<a href="question4.html">
-				A Picture is Worth a Thousand Words
-			</a>
-		</h2>
-		<p>
-			<span id="q4-correct" class="correct hidden">
-				<span class="result-icon" aria-hidden="true">✓</span> Correct
-			</span>
-			<span id="q4-failed" class="failed hidden">
-				<span class="result-icon" aria-hidden="true">✕</span> Incorrect
-			</span>
-			:
-			<span id="q4-answer"></span>
-		</p>
-		<details>
-			<summary>Show solution</summary>
+		<details id="mark-result" class="result">
+			<summary>
+				<span id="mark-correct" class="result-icon correct hidden" aria-label="Correct">✓</span>
+				<span id="mark-failed" class="result-icon failed hidden" aria-label="Incorrect">✕</span>
+				<span>Mark my Words</span>
+			</summary>
 			<p>
-				The alt texts do not match the pictures, one image is even made invisible due to an empty alt attribute.
+				Given: <span id="mark-given"></span>
+			</p>
+			<p>
+				Expected: <span id="mark-expected">Dog</span>
+			</p>
+			<p>
+				To <a href="mark-my-words.html">Mark my Words</a>.
 			</p>
 		</details>
 
-		<h2>
-			<a href="question5.html">
-				Mark My Words
-			</a>
-		</h2>
-		<p>
-			<span id="q5-correct" class="correct hidden">
-				<span class="result-icon" aria-hidden="true">✓</span> Correct
-			</span>
-			<span id="q5-failed" class="failed hidden">
-				<span class="result-icon" aria-hidden="true">✕</span> Incorrect
-			</span>
-			:
-			<span id="q5-answer"></span>
-		</p>
-		<details>
-			<summary>Show solution</summary>
+		<details id="hard-result" class="result">
+			<summary>
+				<span id="hard-correct" class="result-icon correct hidden" aria-label="Correct">✓</span>
+				<span id="hard-failed" class="result-icon failed hidden" aria-label="Incorrect">✕</span>
+				<span>Hard of Hearing</span>
+			</summary>
 			<p>
-				One link has it's underline removed, and some underlined words are not links at all.
+				Given: <span id="hard-given"></span>
+			</p>
+			<p>
+				Expected: <span id="hard-expected">Onomatopoeia</span>
+			</p>
+			<p>
+				To <a href="hard-of-hearing.html">Hard of Hearing</a>.
+			</p>
+		</details>
+
+		<details id="final-result" class="result">
+			<summary>
+				<span id="final-correct" class="result-icon correct hidden" aria-label="Correct">✓</span>
+				<span id="final-failed" class="result-icon failed hidden" aria-label="Incorrect">✕</span>
+				<span>The Final Question</span>
+			</summary>
+			<p>
+				Given: <span id="final-given"></span>
+			</p>
+			<p>
+				Expected: <span id="final-expected">Finish</span>
+			</p>
+			<p>
+				To <a href="the-final-question.html">The Final Question</a>.
 			</p>
 		</details>
 	</main>
@@ -184,31 +164,26 @@
 	</footer>
 
 	<script>
-		function processAnswer(key, correctAnswer) {
-			const answer = localStorage.getItem(key);
-			document.querySelector(`#${key}-answer`).textContent = answer || 'unanswered';
-
-			if (answer == correctAnswer) {
-				document.querySelector(`#${key}-correct`).classList.remove('hidden');
-
-				return true;
-			}
-			else {
-				document.querySelector(`#${key}-failed`).classList.remove('hidden');
-
-				return false;
-			}
-		}
-
 		let correctAnswers = 0;
 
-		correctAnswers += processAnswer('q1', 'D');
-		correctAnswers += processAnswer('q2', 'B');
-		correctAnswers += processAnswer('q3', 'A');
-		correctAnswers += processAnswer('q4', 'D');
-		correctAnswers += processAnswer('q5', 'A');
+		const results = document.querySelectorAll('.result');
+		results.forEach(result => {
+			const key = result.id.split('-')[0];
+			const expected = result.querySelector(`#${key}-expected`).textContent;
+			const answer = localStorage.getItem(key);
+
+			result.querySelector(`#${key}-given`).textContent = answer || 'no answer';
+
+			if (answer && expected.toLowerCase() == answer.toLowerCase()) {
+				result.querySelector(`#${key}-correct`).classList.remove('hidden');
+				correctAnswers++;
+			} else {
+				result.querySelector(`#${key}-failed`).classList.remove('hidden');
+			}
+		});
 
 		document.querySelector('#score').textContent = correctAnswers;
+		document.querySelector('#total').textContent = results.length;
 	</script>
 </body>
 
