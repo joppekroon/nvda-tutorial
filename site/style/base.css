@@ -96,6 +96,18 @@ a {
 	color: var(--fg);
 }
 
+a[aria-current='page'] {
+	text-decoration: none;
+}
+a[aria-current='page']:hover,
+a[aria-current='page']:focus {
+	text-decoration: underline;
+}
+a[aria-current='page'] .marker {
+	vertical-align: text-bottom;
+	margin-left: 8px;
+}
+
 kbd {
 	background-color: #eee;
 	border-radius: 3px;
